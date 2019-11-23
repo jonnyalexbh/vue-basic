@@ -2,7 +2,8 @@ new Vue({
   el: '#app',
   data() {
     return {
-      title: 'Hola Vue!'
+      name: 'Bitcoin',
+      img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png'
     }
   }
 })

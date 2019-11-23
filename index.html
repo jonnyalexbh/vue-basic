@@ -11,19 +11,17 @@
 
 <body>
   <div id="app">
-    <img v-bind:src="img" v-bind:alt="name" width="64" height="64">
+    <img v-on:mouseover='toggleShowPrices' v-on:mouseout='toggleShowPrices' v-bind:src="img" v-bind:alt="name"
+      width="64" height="64">
     <h1>
       {{ name }}
       <span v-if='changePercent > 0'>👍🏼</span>
       <span v-else-if='changePercent < 0'>👎🏻</span>
       <span v-else>✌🏻</span>
+      <span v-on:click='toggleShowPrices'>{{ showPrices ? '🙈' : '🙉' }}</span>
     </h1>
 
-    <ul>
-      <li v-for='(price, idx) in prices' v-bind:key='price'>{{ idx }} - {{ price }}</li>
-    </ul>
-
-    <ul>
+    <ul v-show='showPrices'>
       <li v-for='(pd, idx) in pricesWithDays' v-bind:key='pd'>{{ idx }} - {{ pd.day }} - {{ pd.value }}</li>
     </ul>
   </div>

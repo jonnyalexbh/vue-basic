@@ -12,7 +12,16 @@
 <body>
   <div id="app">
     <img v-bind:src="img" v-bind:alt="name" width="64" height="64">
-    <h1>{{ name }}</h1>
+    <h1>
+      {{ name }}
+      <span v-if='changePercent > 0'>👍🏼</span>
+      <span v-else-if='changePercent < 0'>👎🏻</span>
+      <span v-else>✌🏻</span>
+
+      <span v-show='changePercent > 0'>👍🏼</span>
+      <span v-show='changePercent < 0'>👎🏻</span>
+      <span v-show='changePercent == 0'>✌🏻</span>
+    </h1>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

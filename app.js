@@ -5,6 +5,9 @@ new Vue({
       name: 'Bitcoin',
       img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
       changePercent: 0,
+
+      price: 8200,
+
       prices: [8400, 7900, 8200, 9000, 9400, 10000, 102000],
       pricesWithDays: [
         { day: 'Lunes', value: 8400 },
